@@ -11,7 +11,27 @@ Ce module contient les fonctions nécessaires pour :
 import pandas as pd
 import numpy as np
 from datetime import datetime
-from typing import List, Tuple, Dict, Any
+from typing import List, Tuple, Dict, Any, Optional
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.graph_objects as go
+import scipy.stats as ss
+
+try:
+    from numpy.typing import ArrayLike
+except ImportError:
+    from typing import Any as ArrayLike
+
+try:
+    from sklearn.decomposition import PCA
+except ImportError:
+    PCA = None
+
+try:
+    from sklearn.pipeline import Pipeline
+except ImportError:
+    Pipeline = None
 
 
 def process_user_bad(name: str, age: int, email: str) -> Dict[str, Any] | None:
@@ -940,9 +960,9 @@ __all__ = [
 ]
 
 
-====================================================================================================
+# ====================================================================================================
 # Fonctions utilitaires - Modules 5-7
-====================================================================================================
+# ====================================================================================================
 
 def compute_gradient(beta_j: np.ndarray, X: np.ndarray, y: np.ndarray, y_pred: np.ndarray, lambda_: float) -> tuple[float, np.ndarray]:
     """
@@ -1612,9 +1632,9 @@ def compute_lift_by_decile(
     return lift_table
 
 
-====================================================================================================
+# ====================================================================================================
 # Sélection de features - Modules 6-7
-====================================================================================================
+# ====================================================================================================
 
 def creer_features(df: pd.DataFrame) -> pd.DataFrame:
     """

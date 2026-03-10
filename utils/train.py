@@ -12,6 +12,11 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from typing import List, Dict, Any, Tuple, Sequence, Optional
+
+try:
+    from numpy.typing import ArrayLike
+except ImportError:
+    from typing import Any as ArrayLike
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib as mpl
@@ -20,7 +25,8 @@ from sklearn.inspection import DecisionBoundaryDisplay
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import RobustScaler, OneHotEncoder
-from sklearn.compose import make_pipeline, make_column_transformer
+from sklearn.compose import make_column_transformer
+from sklearn.pipeline import Pipeline, make_pipeline
 
 
 def five_year_interval(x: datetime) -> str:
@@ -589,9 +595,9 @@ __all__ = [
 ]
 
 
-====================================================================================================
+# ====================================================================================================
 # Fonctions d'entraînement des Modules 5-7
-====================================================================================================
+# ====================================================================================================
 
 def fit_reg_lineaire(X: np.ndarray, y: np.ndarray) -> np.ndarray:
     """

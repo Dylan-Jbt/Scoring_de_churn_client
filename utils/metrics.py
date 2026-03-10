@@ -12,7 +12,11 @@ import pandas as pd
 import numpy as np
 from typing import List, Tuple, Any
 import scipy.stats as ss
-from sklearn.metrics import calibration_curve
+
+try:
+    from sklearn.calibration import calibration_curve
+except ImportError:
+    from sklearn.metrics import calibration_curve
 
 
 def process(data: List[float], factor: float) -> List[float]:
@@ -238,9 +242,9 @@ __all__ = [
 ]
 
 
-====================================================================================================
+# ====================================================================================================
 # Fonctions de métriques des Modules 7
-====================================================================================================
+# ====================================================================================================
 
 def score_spiegelhalter(
     y_true: np.ndarray | pd.Series,
@@ -273,9 +277,9 @@ def score_spiegelhalter(
     return numerateur / denominateur
 
 
-====================================================================================================
+# ====================================================================================================
 # Fonctions de calibration du Module 7
-====================================================================================================
+# ====================================================================================================
 
 def sklearn_calibration(
     y_true: np.ndarray | pd.Series,
