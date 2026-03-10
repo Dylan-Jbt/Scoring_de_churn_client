@@ -12,6 +12,7 @@ plotly>=5.10
 scikit-learn>=1.2
 xgboost>=1.7
 imbalanced-learn>=0.10  # For handling imbalanced classification
+lightgbm>=3.3  # For gradient boosting models, often faster than XGBoost
 
 # Model Persistence
 joblib>=1.3
