@@ -28,7 +28,7 @@ Le protocole suit une séparation stricte entre entraînement et test. Le jeu de
 
 ## Modèle Retenu
 
-> ⚠️ **À compléter après ré-exécution du notebook** avec la nouvelle méthodologie (seuil calibré sur train).
+>    **À compléter après ré-exécution du notebook** avec la nouvelle méthodologie (seuil calibré sur train).
 
 | | |
 |---|---|
