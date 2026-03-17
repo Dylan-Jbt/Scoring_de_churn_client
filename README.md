@@ -166,6 +166,7 @@ Trois leviers activés simultanément :
 │   ├── 02_baseline_models.ipynb
 │   └── 03_finetuned_model.ipynb
 ├── reports/
+│   └── figures/
 │   └── model_report.md
 └── utils/
     ├── data_prep.py
