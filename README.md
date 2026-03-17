@@ -149,16 +149,6 @@ Trois leviers activés simultanément :
 | **Biais socio-démographiques** | Les variables `gender` et `SeniorCitizen` sont présentes. Vérifier que le modèle ne discrimine pas sur ces critères (audit d'équité). |
 | **Stabilité temporelle** | Le modèle est entraîné sur un snapshot statique. En production, un suivi de la dérive (data drift / concept drift) est indispensable. |
 | **Seuil figé** | Le seuil optimal dépend du ratio coût d'acquisition / coût de rétention ; il doit être recalibré si la stratégie marketing évolue. |
-
-### Pistes d'amélioration
-
-- **Enrichir les features** : données d'usage (appels, data), historique de contacts SAV, NPS client.
-- **Modèles avancés** : LightGBM, stacking, réseaux de neurones tabulaires (TabNet).
-- **Analyse de survie** : modéliser le *temps* avant churn plutôt qu'une simple classification binaire.
-- **SMOTE / sur-échantillonnage** : tester des techniques de rééquilibrage synthétique (imbalanced-learn est déjà dans les dépendances).
-- **Interprétabilité** : intégrer SHAP pour des explications individuelles (client par client).
-- **Pipeline MLOps** : automatiser le ré-entraînement périodique, le monitoring de drift et le versioning des modèles (MLflow, DVC).
-
 ---
 
 ## Arborescence du projet
